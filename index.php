@@ -1,26 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300&display=swap" rel="stylesheet">
-    <title>Site DBZ Soin</title>   
-</head>
-
-<body>
- <header>
-    <nav>
-        <div class="navbar">
-            <img src="image/de17217161e096ef64ad3fe00621467b-removebg-preview.png" class="logo" alt="logo">
-            <a href="#equipe">Présentation</a>
-            <a href="#Médicaments">Médicaments</a>
-            <a href="#box">Contact</a>
-            <img src="image/kin-removebg-preview.png" class="logo" alt="logo">
-        </div>
-
-    </nav>
- </header>
+<?php
+include 'components/header.php';
+?>
 
  <div class="main">
     <div class="baniere">
@@ -88,22 +68,8 @@
             <div class="medoc">
                 <img src="image/c18-removebg-preview.png" alt="c18">
                 <div class="medicament" >
-                    <div class="card">
-                        <img src="image/Senzu.webp" class="iperso" alt="perso">
-                        <p>Haricot magique</p>
-                    </div>
-                    <div class="card">
-                        <img src="image/Goku-Medicale-Machine.gif" class="iperso" alt="perso">
-                        <p>Machine de soin</p>
-                    </div>
-                    <div class="card">
-                        <img src="image/figurine-dbz-summer-gift-set-de-4-repliques-capsule-corp-9cmdragon-ball-z-removebg-preview.png" class="iperso" alt="perso">
-                        <p>Capsule de soin</p>
-                    </div>
-                    <div class="card">
-                        <img src="image/s-l1200-removebg-preview.png" class="iperso" alt="perso">
-                        <p>Boules de  Cristal</p>
-                    </div>
+                    
+                <?php include 'medoc_card.php'; ?>
 
                 </div>
                
@@ -120,21 +86,22 @@
             <div class="contact">
                 <h1 class="title title-1">Contact</h1>
         
-                <form class="form">
+                <form class="form" action="ajout_formulaire.php" method="post">
                     <div class="form__group">
-                        <input type="text" class="form__input" id="nom" placeholder="Votre Nom" required>
+                        <input type="text" id="nom" name="name" class="form__input" placeholder="Votre Nom" required>
                         <label for="nom" class="form__label">Votre Nom</label>
                     </div>
                     <div class="form__group">
-                        <input type="email" class="form__input" id="email" placeholder="Votre Email" required>
+                        <input type="email" id="email" name="email" class="form__input" placeholder="Votre Email" required>
                         <label for="email" class="form__label">Votre Email</label>
                     </div>
                     <div class="form__message">
-                        <textarea name="name" id="message" cols="30" rows="10" class="form__input message__input" required></textarea>
+                        <label for="message" class="form__label"></label>
+                        <textarea type="text" name="message" id="message" cols="30" rows="10" class="form__input message__input" required></textarea>
                     </div>
         
                     <div class="submit">
-                        <button class="submitBtn">Envoyer &rarr;</button>
+                        <button type="submit"class="submitBtn">Envoyer</button>
                     </div>
                 </form>
             </div>
